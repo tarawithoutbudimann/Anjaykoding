@@ -3,8 +3,19 @@ import './App.css';
 import { Button, Navbar } from 'flowbite-react';
 import { useState } from 'react';
 
-function App() {
+function Penghitung(){
   const[hitungan, setHitungan] = useState(0);
+  return(
+    <div>
+      <button 
+        className="m-5 bg-gradient-to-r from-purple-500 to-blue-500 text-white p-2 rounded shadow"
+        onClick = {() => setHitungan (hitungan + 1)}> Counter : {hitungan}
+      </button>
+    </div>
+  )
+}
+function App() {
+  const [daftar, setDaftar] = useState([1, 2, 3]);
   return (
     <>
     <Navbar fluid rounded>
@@ -25,12 +36,20 @@ function App() {
         <Navbar.Link href="#">EN</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
+    {/* untuk memanggil fungsi penghitungnya biar terpisah satu sama lain dan gaperlu dicopas satu-satu */}
+    <Penghitung/>
+    <Penghitung/>
+    <Penghitung/>
+    {/* untuk membuat array  */}
     <div>
-      <button 
-        className="m-5 bg-gradient-to-r from-purple-500 to-blue-500 text-white p-2 rounded"
-        onClick = {() => setHitungan (hitungan + 1)}> Counter : {hitungan}
-      </button>
+      <button onClick={() => setDaftar([...daftar, 1])}>Tambah angka 1</button>
+      <br></br>
+      <button onClick={() => setDaftar([...daftar, 2])}>Tambah angka 2</button>
+      <br></br>
+      {daftar.join(",")}
+      <br></br>
     </div>
+
     </>
   );
 }
