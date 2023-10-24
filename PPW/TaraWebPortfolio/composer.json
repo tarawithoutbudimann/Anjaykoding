@@ -1,0 +1,15 @@
+{
+    "name": "asus/tara-web-portfolio",
+    "autoload": {
+        "psr-4": {
+            "Asus\\TaraWebPortfolio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tarawithoutbudimann",
+            "email": "tamarasashikirana@mail.ugm.ac.id"
+        }
+    ],
+    "require": {}
+}
